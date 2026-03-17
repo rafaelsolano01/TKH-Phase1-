@@ -1,0 +1,9 @@
+#!/bin/bash
+# T1-M1-S02: SECURITY HARDENING AUTOMATION
+# Task: Restore Gold Standard permissions to restricted artifacts.
+
+# Secure secrets.txt
+chmod 600 ~/Vault/secrets.txt
+
+# Secure /etc/shadow 
+sudo chmod 640 /etc/shadow
