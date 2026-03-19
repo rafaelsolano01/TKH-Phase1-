@@ -7,19 +7,19 @@
 2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
     link/ether 08:00:27:11:91:ae brd ff:ff:ff:ff:ff:ff
     inet 192.168.1.162/24 metric 100 brd 192.168.1.255 scope global dynamic enp0s3
-       valid_lft 3502sec preferred_lft 3502sec
+       valid_lft 3442sec preferred_lft 3442sec
     inet6 2600:4809:9950:7b00::5dee/128 scope global dynamic noprefixroute 
-       valid_lft 602903sec preferred_lft 257303sec
+       valid_lft 602844sec preferred_lft 257244sec
     inet6 2600:4809:9950:7b00:a00:27ff:fe11:91ae/64 scope global dynamic mngtmpaddr noprefixroute 
-       valid_lft 299sec preferred_lft 299sec
+       valid_lft 300sec preferred_lft 300sec
     inet6 fe80::a00:27ff:fe11:91ae/64 scope link 
        valid_lft forever preferred_lft forever
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=115 time=13.6 ms
-64 bytes from 8.8.8.8: icmp_seq=2 ttl=115 time=12.0 ms
-64 bytes from 8.8.8.8: icmp_seq=3 ttl=115 time=18.0 ms
-64 bytes from 8.8.8.8: icmp_seq=4 ttl=115 time=12.8 ms
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=115 time=44.4 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=115 time=11.6 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=115 time=11.1 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=115 time=10.0 ms
 
 --- 8.8.8.8 ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3005ms
-rtt min/avg/max/mdev = 11.979/14.101/18.044/2.349 ms
+4 packets transmitted, 4 received, 0% packet loss, time 3127ms
+rtt min/avg/max/mdev = 10.047/19.287/44.381/14.498 ms
