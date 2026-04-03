@@ -1,0 +1,30 @@
+#TLAB_REPORT: OPERATION BLACKOUT
+==============================================================
+# Analyst: [Rafael Solano]
+# Date: April 3, 2026
+
+
+# ip route
+default via 192.168.1.1 dev enp0s3 proto dhcp src 192.168.1.76 metric 100 
+
+# 2. LAYER 7: DNS DATA
+--------------------------------------------------------------
+#Target: secure.titancorp.com
+Resolution: 192.168.10.193
+Status: Restored (/etc/hosts purged)
+
+# 3. LAYER 4: FORENSIC DATA (TCP FLAGS)
+--------------------------------------------------------------
+# Capture Interface: enp0s3
+# Handshake Sequence:
+
+[S]   (SYN)      - 192.168.10.150 -> 192.168.10.193:80
+[S.]  (SYN-ACK)  - 192.168.10.193:80 -> 192.168.10.150
+[.]   (ACK)      - 192.168.10.150 -> 192.168.10.193:80
+[P.]  (PUSH)     - Data transfer initiated (HTTP GET)
+
+# LOG ENTRY:
+# 06:34:57.932091 IP 192.168.10.150.34002 > 192.168.10.193.80: Flags [S]
+# 06:34:57.932128 IP 192.168.10.193.80 > 192.168.10.150.34002: Flags [S.]
+# 06:34:57.932152 IP 192.168.10.150.34002 > 192.168.10.193.80: Flags [.]
+
