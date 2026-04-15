@@ -1,0 +1,33 @@
+==================================================
+ANOMALY 1 - DEAD DIAGNOSTIC (LAYER 7)
+Issue: Script had no execute permissions.
+Fix: Used chmod 755 to restore permissions.
+Result: Script executed successfully and returned heartbeat.
+
+ANOMALY 2 - DOORWAY CONFLICT (LAYER 4)
+Issue: Port 8080 already in use by nginx.
+Fix: Stopped nginx using systemctl stop nginx.
+Result: Docker container successfully started on port 8080.
+
+ANOMALY 3 - SILENT HEARTBEAT (LAYER 3)
+Issue: ICMP ping initially blocked or tested for firewall restriction.
+Fix: Verified firewall rules; ping succeeded.
+Result: Network connectivity confirmed to 8.8.8.8.
+==================================================
+
+==================================================
+SESSION 16: READINESS INVENTORY
+==================================================
+Operator: Rafael Solano
+Date: 2026-04-14
+
+Confidence Audit (Yes/No):
+1. Nmap (Network Scanning): Yes
+2. Docker (Containerization): Yes
+3. Linux Hardening (UFW/chmod): Yes
+4. VS Code Remote-SSH: Yes
+
+Identify your weakest area and your plan to review it:
+My weakest area is Nmap network scanning. I understand the basics, but I need more practice identifying open ports and interpreting scan results.
+ My plan is to review Nmap commands and practice scanning local and virtual machines to improve accuracy and speed.
+==================================================
