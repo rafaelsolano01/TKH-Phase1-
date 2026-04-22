@@ -1,0 +1,44 @@
+<h1
+id="titan-small-business-services-security-architecture-document-sad">TITAN
+SMALL BUSINESS SERVICES: SECURITY ARCHITECTURE DOCUMENT (SAD)</h1>
+<p><strong>Operator:</strong> Rafael Solano<br />
+<strong>Date:</strong> 2026-04-21</p>
+<hr />
+<h2 id="perimeter-hardening-ufw-ssh">1. Perimeter Hardening (UFW &amp;
+SSH)</h2>
+<ul>
+<li><strong>SSH Status:</strong>
+<ul>
+<li>Disabled root login in <code>/etc/ssh/sshd_config</code></li>
+<li>Disabled password authentication</li>
+<li>Enabled SSH key-based authentication (ED25519 keypair)</li>
+<li>Verified secure SSH login after restart</li>
+</ul></li>
+<li><strong>Firewall Logic:</strong>
+<ul>
+<li>Default deny incoming traffic</li>
+<li>Allowed port 22/tcp for SSH access</li>
+<li>Allowed port 8080/tcp for web application access</li>
+<li>Outbound traffic allowed by default</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="the-automated-auditor-python">2. The Automated Auditor
+(Python)</h2>
+<ul>
+<li><strong>Script Logic:</strong>
+<ul>
+<li>Python script uses <code>os</code> and <code>datetime</code></li>
+<li>Sends ICMP ping requests to monitor system availability</li>
+<li>Logs system status as “DC is UP” or “DC is DOWN”</li>
+<li>Appends timestamped results to
+<code>/var/log/dc_audit.log</code></li>
+</ul></li>
+</ul>
+<p>```python import os import datetime</p>
+<p>DC_IP = “8.8.8.8”</p>
+<p>response = os.system(f”ping -c 4 {DC_IP}“)</p>
+<p>status = “DC is UP” if response == 0 else “DC is DOWN”</p>
+<p>log_entry = f”{datetime.datetime.now()} - {status}”</p>
+<p>with open(“/var/log/dc_audit.log”, “a”) as log_file:
+log_file.write(log_entry)</p>
