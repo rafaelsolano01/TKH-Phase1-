@@ -1,0 +1,29 @@
+==================================================
+SESSION 20: NETWORK ENUMERATION MAP
+Target Subnet: 172.99.0.0/24
+==================================================
+
+HOST 1 (172.99.0.5)
+* Open Ports: 22/tcp, 80/tcp
+* Service/Version:
+  - 22/tcp: OpenSSH 8.2
+  - 80/tcp: Apache httpd 2.4.41
+
+HOST 2 (172.99.0.6)
+* Open Ports: 21/tcp, 3306/tcp
+* Service/Version:
+  - 21/tcp: vsftpd 3.0.3
+  - 3306/tcp: MySQL 5.7
+
+HOST 3 (172.99.0.7)
+* Open Ports: 443/tcp
+* Service/Version:
+  - 443/tcp: nginx 1.18
+
+QUESTIONS:
+1. What Nmap flag did you use to find the specific software versions running on these ports?
+Answer: -sV
+
+2. Why is it dangerous to run an intense scan (like -A) on a fragile legacy system?
+Answer: Because it enables aggressive scanning features such as OS detection, script scanning,
+and version probing, which can overload or crash unstable or outdated systems.
