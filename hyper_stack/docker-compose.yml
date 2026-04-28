@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecretpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - private_net
+
+  web:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: wp_password
+      WORDPRESS_DB_NAME: wordpress
+    depends_on:
+      - db
+    networks:
+      - private_net
+
+volumes:
+  db_data:
+
+networks:
+  public_net:
+  private_net:
+    internal: true
