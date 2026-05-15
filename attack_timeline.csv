@@ -1,0 +1,4 @@
+Timestamp,Source IP,Event Type,Action,Description
+2026-04-30 10:18:00,198.51.100.44,Failed Login,Initial Access,External attack source brute forcing admin account
+2026-04-30 10:25:00,10.0.5.15,Windows Security,Lateral Movement,Event ID 4624: Successful Logon with escalation to Domain Admin
+2026-04-30 10:45:00,10.0.5.15,Firewall,Exfiltration,Anomalous outbound volume of 4.5 GB transferred over port 443 to 198.51.100.44
