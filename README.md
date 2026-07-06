@@ -46,5 +46,14 @@ Welcome to my technical portfolio. As a 2026 Innovation Fellow at The Knowledge 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
+## 📂 Repository Organization
+- **/01_Defensive_Eng:** Hardening scripts, firewall configs, and container security.
+- **/02_Offensive_Ops:** Reconnaissance reports, vulnerability assessments, and exploitation logs.
+- **/03_Forensics_IR:** Digital forensics, incident response timelines, and audit logs.
+- **/04_Automation:** Security-focused scripts (Python/Bash) for system and network auditing.
+- **/05_Capstone_Final:** Final reports and capstone project artifacts from the Phase 1 Reckoning.
+
+---
+*Note: Sensitive data has been sanitized from all reports.*
 ---
 *Professional Portfolio | 2026*
